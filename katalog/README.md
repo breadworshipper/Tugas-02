@@ -1,5 +1,5 @@
 1.)
-ristek.link/bagan-pbp-tugas-02
+[Bagan](ristek.link/bagan-pbp-tugas-02)
 
 2.)
 Kita menggunakan virtual environment agar package yang kita install untuk project tidak terinstall juga di environment
