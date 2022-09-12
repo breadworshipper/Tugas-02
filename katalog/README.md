@@ -1,8 +1,5 @@
 1. )
-- [10/Sep/2022 09:42:49] "GET /katalog/ HTTP/1.1" 200 1951
-| Di sini request dari client akan diteruskan dari urls.py ke views.py untuk menampilkan laman /katalog
-- [10/Sep/2022 09:42:49] "GET /static/css/style.css HTTP/1.1" 404 1798 | Di sini views.py akan menampilkan laman /katalog
-dengan mengambil file HTML atau CSS yang terdapat pada folder template
+
 
 2.)
 Kita menggunakan virtual environment agar package yang kita install untuk project tidak terinstall juga di environment
