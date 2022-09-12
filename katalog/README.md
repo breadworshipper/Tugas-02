@@ -1,5 +1,6 @@
 1.)
 https://ristek.link/bagan-pbp-tugas-02
+Awalnya, _client request_ akan masuk ke dalam bagian urls yang diproses oleh urls.py untuk mengirim sinyal ke views untuk menampilkan page yang tepat. Lalu, views dapat mendapatkan data dari database melalui model yang akan mengakses database secara langsung. Jika data yang diperlukan sudah ada, views akan memilih file HTMl untuk ditampilkan ke user.
 
 2.)
 Kita menggunakan virtual environment agar package yang kita install untuk project tidak terinstall juga di environment
