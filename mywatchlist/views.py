@@ -2,6 +2,7 @@ from django.shortcuts import render
 from mywatchlist.models import WatchListItem
 from django.http import HttpResponse
 from django.core import serializers
+from django.template import loader
 
 watch_list_data = WatchListItem.objects.all()
 
@@ -12,6 +13,10 @@ context = {
 }
 # Create your views here.
 def show_watch_list(request):
+    return render(request, 'watchlist.html', context)
+
+# Show data dalam format html
+def show_html(request):
     return render(request, 'watchlist.html', context)
 
 # Show data dalam format xml

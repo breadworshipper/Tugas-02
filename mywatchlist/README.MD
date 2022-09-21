@@ -6,4 +6,6 @@ adalah bahasa markup dan menggunakan tag untuk merepresentasikan data. JSON dan 
 lain-lain. Tanpa data delivery tidak ada data yang dapat ditampilkan pada platform kita.
 3. Untuk XML dan JSON, saya tambahkan pada views.py function yang menerima request dan me-return
 XML atau JSON dengan function HTTPResponse dengan argumen application/xml atau application/json pada parameter content_type
-4. 
+
+Postman :
+https://drive.google.com/drive/folders/1_VdPY-zyHNLhNT8Q-84A_VnhyQy6DG44?usp=sharing
