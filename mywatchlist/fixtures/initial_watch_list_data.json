@@ -4,21 +4,21 @@
         "pk": 1,
         "fields": {
             "watched": true,
-            "title": "Testing 01",
+            "title": "Your Name",
             "rating": 10,
-            "release_date": "16 September",
-            "review": "https://www.tokopedia.com/ptpratamasemesta/iphone-12-pro-max-garansi-resmi-ibox-silver-256-gb"
+            "release_date": "2016-12-07",
+            "review": "Nice"
         }
     },
     {
         "model": "mywatchlist.watchlistitem",
         "pk": 2,
         "fields": {
-            "watched": true,
-            "title": "Testing02",
-            "rating": 10,
-            "release_date": "16 September",
-            "review": "https://www.tokopedia.com/hobbyjapan/mg-nu-gundam-verka"
+            "watched": false,
+            "title": "1917",
+            "rating": 0,
+            "release_date": "2020-09-16",
+            "review": "Not watched yet :("
         }
     },
     {
@@ -26,10 +26,10 @@
         "pk": 3,
         "fields": {
             "watched": true,
-            "title": "Testing03",
-            "rating": 10,
-            "release_date": "16 September",
-            "review": "https://www.tokopedia.com/mhi-samsung/samsung-galaxy-s22-8-256gb-black"
+            "title": "Avengers: Endgame",
+            "rating": 8,
+            "release_date": "2019-04-24",
+            "review": "Nice #2"
         }
     },
     {
@@ -37,21 +37,77 @@
         "pk": 4,
         "fields": {
             "watched": true,
-            "title": "testing 04",
-            "rating": 10,
-            "release_date": "16 September",
-            "review": "https://www.tokopedia.com/807garage/air-jordan-1-mid-multicolour"
+            "title": "Avengers: Infinity War",
+            "rating": 8,
+            "release_date": "2018-04-25",
+            "review": "Nice #3"
         }
     },
     {
         "model": "mywatchlist.watchlistitem",
         "pk": 5,
         "fields": {
-            "watched": true,
-            "title": "Testing 05",
+            "watched": false,
+            "title": "Dunkirk",
             "rating": 10,
-            "release_date": "16 September",
-            "review": "https://www.tokopedia.com/tokobaruofficial/apple-airpods-3-mme73id-a-garansi-resmi-ibox"
+            "release_date": "2017-06-20",
+            "review": "Not watched yet :("
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistitem",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Interstellar",
+            "rating": 10,
+            "release_date": "2014-11-06",
+            "review": "Nice #4"
+        }
+    },
+        {
+        "model": "mywatchlist.watchlistitem",
+        "pk": 7,
+        "fields": {
+            "watched": true,
+            "title": "The Martian",
+            "rating": 7,
+            "release_date": "2015-09-30",
+            "review": "Nice #5"
+        }
+    },
+        {
+        "model": "mywatchlist.watchlistitem",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Minions: The Rise of Gru",
+            "rating": 6,
+            "release_date": "2022-05-28",
+            "review": "Not so nice :)"
+        }
+    },
+        {
+        "model": "mywatchlist.watchlistitem",
+        "pk": 9,
+        "fields": {
+            "watched": false,
+            "title": "Boku no Pico",
+            "rating": 0,
+            "release_date": "2006-09-06",
+            "review": "Not so nice idk"
+        }
+    },
+        {
+        "model": "mywatchlist.watchlistitem",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "Odd Taxi",
+            "rating": 0,
+            "release_date": "2021-05-06",
+            "review": "Not watched yet :("
         }
     }
+
 ]
