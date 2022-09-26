@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+<title>Logout</title>
+{% endblock meta %}
+
+{% block content %}
+
+<div class = "logout">
+
+    <h1>Logout?</h1>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <button><a href="{% url 'todolist:logout' %}">Logout :(</a></button>
+        <button><a href="{% url 'todolist:show_todo_list' %}">Gajadi Logout :)</a></button>
+    </form>
+
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}     
+        
+    Belum mempunyai akun? <a href="{% url 'todolist:register' %}">Buat Akun</a>
+
+</div>
+
+{% endblock content %}
