@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from todolist.models import Task
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.core import serializers
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -16,9 +16,11 @@ todo_list_data = Task.objects.all().values()
 # Create your views here.
 @login_required(login_url='/todolist/login/')
 def show_todo_list(request):
+    user_data = Task.objects.filter(user=request.user).values()
     context = {
-        'todo_list': todo_list_data,  # data untuk HTML
+        'todo_list': user_data,  # data untuk HTML
         'nama': request.user.username,
+        'user': request.user
     }
     return render(request, 'todolist.html', context)
 
@@ -69,12 +71,13 @@ def show_logout_page(request):
 @login_required
 def create_task(request):
     if request.POST:
-        form = TaskForm(request.POST, initial={'user': request.user})
-        print(f"di luar {form.is_valid()}")
+        form = TaskForm(request.POST)
+        print({form.is_valid()})
         if form.is_valid():
-            print(f"di dalem {form.is_valid()}")
+            instance = form.save(commit=False)
+            instance.user = request.user
             form.save()
-            return HttpResponse("ok")
+            return HttpResponseRedirect('/todolist/')
         else:
             print(form.errors.as_data())
 

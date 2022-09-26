@@ -6,7 +6,6 @@
 
   <h5>Logged in as : </h5>
   <p>{{nama}}</p>
-
   <table>
     <tr>
       <th>Date</th>
@@ -22,5 +21,6 @@
           {% endfor %}
       </tr>
   </table>
+<button><a href="{% url 'todolist:create_task' %}">Create Task</a></button>
 <button><a href="{% url 'todolist:show_logout_page' %}">Logout</a></button>
  {% endblock content %}

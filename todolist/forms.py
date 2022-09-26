@@ -6,5 +6,4 @@ from django.contrib.auth.models import User
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['date', 'title', 'description', 'user']
-        widgets =  {}
+        fields = ['date', 'title', 'description']
