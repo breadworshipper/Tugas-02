@@ -13,3 +13,5 @@ sebelumnya
 4. Pertama, bikin class baru dengan nama TaskForm di forms.py. Lalu, import ke views.py untuk digunakan pada function 
 create_task(). Function tersebut akan digunakan untuk menampilkan form pada page create-task. Lalu akan dicek dengan 
 form.is_valid() dan jika valid akan di-save ke database dengan form.save()
+
+HEROKU : https://djangoajrakatalog.herokuapp.com/
