@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from todolist.models import Task
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, HttpResponseNotFound
 from django.core import serializers
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -9,6 +9,8 @@ from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from todolist.forms import TaskForm
 from django.contrib.auth.decorators import login_required
+from bootstrap_modal_forms.generic import BSModalCreateView
+
 
 
 todo_list_data = Task.objects.all().values()
@@ -20,12 +22,14 @@ def show_todo_list(request):
     context = {
         'todo_list': user_data,  # data untuk HTML
         'nama': request.user.username,
-        'user': request.user
+        'user': request.user,
+        'form' : TaskForm,
     }
     return render(request, 'todolist.html', context)
 
 def show_json(request):
-    return HttpResponse(serializers.serialize("json", todo_list_data), content_type="application/json")
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
 
 def register(request):
     form = UserCreationForm()
@@ -82,4 +86,19 @@ def create_task(request):
             print(form.errors.as_data())
 
     return render(request, 'create_task.html', {'form': TaskForm})
+
+@login_required
+def add_task(request):
+    # Dari solusi LAB
+    if request.POST:
+        title = request.POST.get("Title")
+        description = request.POST.get("Description")
+
+        new_task = Task(user=request.user, title=title, description=description)
+        new_task.save()
+
+        return HttpResponse(b"CREATED", status=201)
+
+    return HttpResponseNotFound()
+
 

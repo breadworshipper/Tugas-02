@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'katalog',
     'mywatchlist',
     'todolist',
+    'bootstrap_modal_forms',
 ]
 
 MIDDLEWARE = [
