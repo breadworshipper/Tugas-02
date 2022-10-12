@@ -44,4 +44,4 @@ karena file CSS kita belum ter-load.
 3. Element Selector adalah selector untuk memilih semua tag spesifik yang ada di HTML-nya.
 Class Selector (digunakana dengan didahului .) untuk memilih semua tag yang memiliki class yang sama. ID selector (digunakan dengan didahului #)
 untuk memilih semua tag yang memiliki id yang sama.
-4. Untuk tugas ini saya tidak menggunakan CSS selector
+4. Untuk tugas ini hanya menggunakan inline css
