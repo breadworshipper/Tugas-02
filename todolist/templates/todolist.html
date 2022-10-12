@@ -109,16 +109,17 @@
             action="{% url 'todolist:add_task' %}"
             enctype="multipart/form-data"
             id = "modalForm"
+            data-url="{% url 'todolist:add_task' %}"
           >
             {% csrf_token %}
             <table>
               <tr>
-              <td><label>Title</label></td>
-              <td><input type="text" name="Title"></input></td>
+              <td><label for="tasktitle">Title</label></td>
+              <td><input type="char" name="tasktitle" id="tasktitle"></input></td>
               </tr>
               <tr>
-              <td><label>Description</label></td>
-              <td><input type="text" name="Description"></input></td>
+              <td><label for="description">Description</label></td>
+              <td><textarea type="text" name="description" id="description"></textarea></td>
               </tr>
             </table>
             <br>
@@ -129,7 +130,7 @@
           >
             Close
           </button>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" id="submitBtn" class="btn btn-primary">Save changes</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -193,6 +194,25 @@
           },
         });
       }, 1000);
+    });
+
+    $('#modalForm').on('submit', function(e) {
+      $.ajax({
+        method: 'POST',
+        url : $('#modalForm').data('url'),
+        data: {
+          tasktitle: $('#tasktitle').val(),
+          description: $('#description').val(),
+          csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+        },
+        success: function () {
+            
+            alert('Data Successfully Posted');
+
+          },
+      });
+      $("#modalTask").modal('hide');
+      return false
     });
   </script>
 

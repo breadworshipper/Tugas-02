@@ -87,17 +87,18 @@ def create_task(request):
 
     return render(request, 'create_task.html', {'form': TaskForm})
 
-@login_required
+
 def add_task(request):
     # Dari solusi LAB
     if request.POST:
-        title = request.POST.get("Title")
-        description = request.POST.get("Description")
+        title = request.POST.get("tasktitle")
+        description = request.POST.get("description")
 
-        new_task = Task(user=request.user, title=title, description=description)
+        new_task = Task()
+        new_task.user = request.user
+        new_task.title = title
+        new_task.description = description
         new_task.save()
-
-        return HttpResponse(b"CREATED", status=201)
 
     return HttpResponseNotFound()
 
